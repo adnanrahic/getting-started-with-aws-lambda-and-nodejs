@@ -1,6 +1,7 @@
-var moment = require('moment');
+// Node.js 8.10
 
-exports.handler = (event, context, callback) => {
+var moment = require('moment');
+exports.handler = async (event) => {
   var min = 1;
   var max = 6;
   
@@ -10,5 +11,5 @@ exports.handler = (event, context, callback) => {
   var message = 'Your dice throw resulted in ' + 
   randomNumber + ' and was issued at ' + now;
   
-  callback(null, message);
+  return message;
 };
